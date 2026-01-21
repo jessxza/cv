@@ -1,0 +1,126 @@
+/* Reset essencial para remover espaço no topo do PDF */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Layout base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+/* Container principal */
+#cv {
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Padding só no browser (não no PDF) */
+@media screen {
+    #cv {
+        padding: 0 20px;
+    }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin: 0 !important;
+    padding: 0.2em 0 !important;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: 0.6em;
+    margin: 0 !important;
+    padding: 0.2em 0 !important;
+    line-height: 1;
+}
+
+header hr {
+    margin: 0.2em auto !important;
+    height: 1px;
+    background-color: lightgray;
+    border: none;
+}
+
+/* TÍTULOS */
+h2 {
+    font-size: 1.3em;
+    margin: 0 0 0.6em 0;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1em;
+    margin: 0.4em 0;
+    font-weight: 300;
+}
+
+/* GRID PRINCIPAL */
+main {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    margin-top: 1.5em;
+    column-gap: 3em;
+}
+
+/* COLUNA ESQUERDA */
+#mainLeft {
+    border-right: 1px solid lightgray;
+    padding-right: 1.2em;
+}
+
+/* SEÇÕES */
+section {
+    margin: 0 0 2.5em 0;
+}
+
+p {
+    margin: 0.2em 0;
+}
+
+#mainRight {
+    padding-left: 1.5em;
+}
+
+
+/* BOTÃO */
+.actions {
+    margin-top: 1em;
+    text-align: right;
+}
+
+#download {
+    background-color: transparent;
+    border: 1px solid lightgray;
+    color: #333;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#download:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+}
+
+#download:active {
+    transform: scale(0.97);
+}
+
+/* PDF */
+@media print {
+    .actions {
+        display: none;
+    }
+}
+
+/* Evitar quebras estranhas */
+main, header, section {
+    page-break-inside: avoid;
+}
