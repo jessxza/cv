@@ -1,126 +1,34 @@
-/* Reset essencial para remover espaço no topo do PDF */
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Layout base */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-}
+/* Reset básico */
+html, body { margin:0; padding:0; font-family: 'Segoe UI', sans-serif; font-size: 15px; }
 
 /* Container principal */
-#cv {
-    max-width: 900px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+#cv { max-width: 900px; margin: 0 auto; }
 
-/* Padding só no browser (não no PDF) */
-@media screen {
-    #cv {
-        padding: 0 20px;
-    }
-}
+/* Header */
+header { text-align: center; margin:0; padding:0.2em 0; }
+h1 { font-size: 3em; letter-spacing: 0.6em; margin:0; line-height:1; }
+header hr { margin:0.2em auto; height:1px; background:lightgray; border:none; }
+.subtitle { font-weight:300; font-size:1em; }
 
-/* HEADER */
-header {
-    text-align: center;
-    margin: 0 !important;
-    padding: 0.2em 0 !important;
-}
+/* Títulos */
+h2 { font-size:1.3em; margin-bottom:0.6em; font-weight:300; }
+h3 { font-size:1em; margin:0.4em 0; font-weight:300; }
 
-h1 {
-    font-size: 3em;
-    letter-spacing: 0.6em;
-    margin: 0 !important;
-    padding: 0.2em 0 !important;
-    line-height: 1;
-}
+/* Layout colunas */
+main { display: flex; gap:2em; margin-top:1.5em; }
+.column { flex:1; }
+.column.left { border-right:1px solid lightgray; padding-right:1em; }
 
-header hr {
-    margin: 0.2em auto !important;
-    height: 1px;
-    background-color: lightgray;
-    border: none;
-}
+/* Seções e textos */
+section { margin-bottom:2em; page-break-inside:avoid; }
+p { margin:0.2em 0; }
+ul { padding-left:1em; }
 
-/* TÍTULOS */
-h2 {
-    font-size: 1.3em;
-    margin: 0 0 0.6em 0;
-    font-weight: 300;
-}
+/* Botão */
+.actions { text-align:right; margin-top:1em; }
+#download { padding:8px 16px; border:1px solid lightgray; border-radius:6px; background:transparent; cursor:pointer; transition:0.2s; }
+#download:hover { background:#f5f5f5; border-color:#999; }
+#download:active { transform:scale(0.97); }
 
-h3 {
-    font-size: 1em;
-    margin: 0.4em 0;
-    font-weight: 300;
-}
-
-/* GRID PRINCIPAL */
-main {
-    display: grid;
-    grid-template-columns: 38% 62%;
-    margin-top: 1.5em;
-    column-gap: 3em;
-}
-
-/* COLUNA ESQUERDA */
-#mainLeft {
-    border-right: 1px solid lightgray;
-    padding-right: 1.2em;
-}
-
-/* SEÇÕES */
-section {
-    margin: 0 0 2.5em 0;
-}
-
-p {
-    margin: 0.2em 0;
-}
-
-#mainRight {
-    padding-left: 1.5em;
-}
-
-
-/* BOTÃO */
-.actions {
-    margin-top: 1em;
-    text-align: right;
-}
-
-#download {
-    background-color: transparent;
-    border: 1px solid lightgray;
-    color: #333;
-    font-size: 14px;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-#download:hover {
-    background-color: #f5f5f5;
-    border-color: #999;
-}
-
-#download:active {
-    transform: scale(0.97);
-}
-
-/* PDF */
-@media print {
-    .actions {
-        display: none;
-    }
-}
-
-/* Evitar quebras estranhas */
-main, header, section {
-    page-break-inside: avoid;
-}
+/* PDF print */
+@media print { .actions{display:none;} }
