@@ -108,7 +108,7 @@
     <button id="download">Exportar para PDF</button>
 </div>
 
-<script>
+<script><center>
 document.getElementById("download").addEventListener("click", () => {
     const element = document.getElementById("cv");
     const options = {
@@ -120,7 +120,7 @@ document.getElementById("download").addEventListener("click", () => {
     };
     html2pdf().set(options).from(element).save();
 });
-</script>
+</center></script></body>
 
 </body>
 </html>
